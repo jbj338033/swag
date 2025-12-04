@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getSpec } from "@/entities/spec/api";
-import { ViewerClient } from "./ViewerClient";
+import { SpecViewer } from "@/widgets/spec-viewer/ui/SpecViewer";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -14,5 +14,5 @@ export default async function ViewerPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ViewerClient spec={spec.spec} id={spec.id} />;
+  return <SpecViewer spec={spec.spec} />;
 }
