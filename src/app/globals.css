@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.swagger-wrapper .swagger-ui {
+  font-family: var(--font-sans), sans-serif;
+}
+
+.swagger-wrapper .swagger-ui .info .title {
+  font-family: var(--font-sans), sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .swagger-wrapper .swagger-ui {
+    filter: invert(88%) hue-rotate(180deg);
+  }
+  .swagger-wrapper .swagger-ui img {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}

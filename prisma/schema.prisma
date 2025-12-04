@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Spec {
+  id        String   @id
+  title     String?
+  spec      Json
+  createdAt DateTime @default(now())
+}
